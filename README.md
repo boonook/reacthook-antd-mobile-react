@@ -41,8 +41,4 @@
     Disallow:
 ```
 # 预期
-### 1.实现自动化项目管理，减少手动修改代码在scripts目录下进行"# reacthook-antd-mobile-react" 
-"# reacthook-antd-mobile-react" 
-"# reacthook-antd-mobile-react" 
-"# reacthook-antd-mobile-react" 
-"# reacthook-antd-mobile-react" 
+### 1.实现自动化项目管理，减少手动修改代码在scripts目录下进行"
