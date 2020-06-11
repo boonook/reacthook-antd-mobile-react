@@ -8,22 +8,16 @@ function App() {
   return (
     <div className={'appBox'}>
        <div className={'appBoxTop'}>
-           头部
+           {
+               routesConfig.menus.map((r,index)=>{
+                   return <div key={r.key||index}><Link to={r.key}>{r.title}</Link></div>
+               })
+           }
        </div>
         <div className={'appBoxCenter'}>
-            <div className={'appBoxCenterLeft'}>
-                {
-                    routesConfig.menus.map((r,index)=>{
-                        return <div key={r.key||index}><Link to={r.key}>{r.title}</Link></div>
-                    })
-                }
-            </div>
             <div className={'appBoxCenterRight'}>
                 <Routes/>
             </div>
-        </div>
-        <div className={'appBoxFooter'}>
-            底部
         </div>
     </div>
   );

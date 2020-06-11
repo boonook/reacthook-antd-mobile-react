@@ -1,11 +1,13 @@
 import {observable,computed,action} from 'mobx';
-import { getIsLogin,setIsLogin } from './cookies'
+import { getIsLogin,setIsLogin,setToken,getToken,setUserInfo ,getUserInfo} from './cookies'
 import {login} from '../api/login'
 class UserState {
     @observable count = 0;
     @observable name = 'Jokcy';
     @observable isLogin = getIsLogin();
     @observable vm = null;
+    @observable token = getToken();
+    @observable userInfo =getUserInfo();
     @computed get msg(){
         return `${this.name} say  count is ${this.count}`
     }
@@ -21,14 +23,13 @@ class UserState {
     @action login(data,e){
         login(data).then(res=>{
             if(res.code+''==='200'){
+                let data = res.data||{};
+                setToken(data.token);
                 setIsLogin(true);
+                setUserInfo(data.userInfo);
+                e.history.replace('/');
             }
         })
-        let info = data||{};
-        this.userInfo =info.userInfo[0]||{};
-        this.isLogin = true;
-        this.token = info.token||"";
-        this.vm = e;
     }
     @action loginOut(data){
         this.userInfo ={};

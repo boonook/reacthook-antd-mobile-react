@@ -12,9 +12,10 @@ let LoginPage = inject("appState")(observer((props=>{
 
     function onLogin(){
         let params = {
-            name:'admin',
-            password:'123456'
+            userName:'admin',
+            userPwd:'admin'
         }
+        props.appState.userState.login(params,props);
     }
 
     const data = [
