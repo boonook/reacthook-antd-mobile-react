@@ -1,5 +1,6 @@
 import NoFound from './auth/noFound';
 import LoginPage from './auth/login';
+import Registered from './auth/registered';
 import Dashboard from './dashboard/index';
 import BasicForm from './form/basicForm';
 import AdvancedTable from './table/advancedTable';
@@ -11,6 +12,7 @@ import EchartsLine from './echarts/line';
 export default {
     NoFound,
     LoginPage,
+    Registered,
     Dashboard,
     BasicForm,
     AdvancedTable,

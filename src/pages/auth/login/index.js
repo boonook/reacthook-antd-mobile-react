@@ -24,7 +24,11 @@ let LoginPage = inject("appState")(observer((props=>{
     ];
 
     function onChange(e){
-        debugger
+        
+    }
+    
+    function onRegisteredPage() {
+        props.history.push('/registered')
     }
 
     return (
@@ -39,6 +43,7 @@ let LoginPage = inject("appState")(observer((props=>{
                 }
             </div>
             <Image height={720} src={'http://apod.nasa.gov/apod/image/1502/HDR_MVMQ20Feb2015ouellet1024.jpg'}/>
+            <Button type={'primary'} icon="check-circle-o" onClick={onRegisteredPage} title={'注册'}/>
         </div>
     );
 })))

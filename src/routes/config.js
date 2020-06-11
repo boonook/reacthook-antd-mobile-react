@@ -13,7 +13,8 @@ const menus = {
     /// 非菜单相关路由,例如登录，注册，404等；
     others: [
         { key: '/login', title: '登录', icon: 'edit', component: 'LoginPage' },
-        { key: '/404', title: '404', icon: 'edit', component: 'NoFound' }
+        { key: '/404', title: '404', icon: 'edit', component: 'NoFound' },
+        { key: '/registered', title: '注册', icon: 'edit', component: 'Registered' }
     ],
 };
 

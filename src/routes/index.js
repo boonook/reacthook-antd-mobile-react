@@ -4,10 +4,20 @@ import DocumentTitle from 'react-document-title';
 import queryString from 'query-string';
 import routesConfig from './config';
 import AllComponents from '../pages';
-
+import appState from '../store'
+import Dashboard from "../pages/dashboard";
+import LoginPage from "../pages/auth/login";
 function CRouter() {
     useEffect(()=>{
+
     })
+    function requestLogin(component){
+        const isLogin = appState.userState.isLogin||false;
+        if(isLogin+'' === 'false'){
+            return <Redirect to={'/login'}/>;
+        }
+        return component;
+    }
     return (
             <Switch>
                 {routesConfig.menus.map(item=>{
@@ -35,7 +45,7 @@ function CRouter() {
                                 <Component {...merge} />
                             </DocumentTitle>
                         );
-                        return wrappedComponent
+                        return wrappedComponent;
                         }
                     }/>
                 })}

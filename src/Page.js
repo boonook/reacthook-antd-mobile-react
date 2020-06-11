@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import {inject,observer} from 'mobx-react'
 import App from './App';
@@ -9,10 +9,6 @@ import queryString from "query-string";
 import DocumentTitle from "react-document-title";
 
 let Page = inject("appState")(observer((props=>{
-
-    useEffect(()=>{
-
-    })
     return (
         <Router>
             <Switch>
