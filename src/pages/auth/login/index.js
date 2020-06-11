@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react';
+import {inject,observer} from "mobx-react";
 import Button from '../../../components/antdMobile/Button';
 import Radio from '../../../components/antdMobile/Radio';
-import {inject,observer} from "mobx-react";
-
+import Image from '../../../components/antdMobile/Image'
 let LoginPage = inject("appState")(observer((props=>{
     const [value,setValue] = useState(0)
 
@@ -38,6 +38,7 @@ let LoginPage = inject("appState")(observer((props=>{
                     })
                 }
             </div>
+            <Image height={720} src={'http://apod.nasa.gov/apod/image/1502/HDR_MVMQ20Feb2015ouellet1024.jpg'}/>
         </div>
     );
 })))
