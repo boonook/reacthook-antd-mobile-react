@@ -9,10 +9,13 @@ import BasicTable from './table/basicTable';
 import ButtonPage from './ui/buttons';
 import Icons from './ui/icons';
 import EchartsLine from './echarts/line';
+import TestPage from './test';
+import MenuExample from './ui/menu'
 export default {
     NoFound,
     LoginPage,
     Registered,
+    TestPage,
     Dashboard,
     BasicForm,
     AdvancedTable,
@@ -20,5 +23,6 @@ export default {
     BasicTable,
     ButtonPage,
     Icons,
+    MenuExample,
     EchartsLine
 }

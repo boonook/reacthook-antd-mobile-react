@@ -1,10 +1,13 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import Routes from './routes/index';
 import { Link } from 'react-router-dom';
 import routesConfig from './routes/config'
 import './App.less'
 
 function App() {
+  function menu() {
+
+  }  
   return (
     <div className={'appBox'}>
        <div className={'appBoxTop'}>
