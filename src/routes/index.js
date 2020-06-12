@@ -4,9 +4,7 @@ import DocumentTitle from 'react-document-title';
 import queryString from 'query-string';
 import routesConfig from './config';
 import AllComponents from '../pages';
-import appState from '../store'
-import Dashboard from "../pages/dashboard";
-import LoginPage from "../pages/auth/login";
+import appState from '../store';
 function CRouter() {
     useEffect(()=>{
 
