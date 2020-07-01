@@ -5,9 +5,6 @@ import routesConfig from './routes/config'
 import './App.less'
 
 function App() {
-  function menu() {
-
-  }  
   return (
     <div className={'appBox'}>
        <div className={'appBoxTop'}>
