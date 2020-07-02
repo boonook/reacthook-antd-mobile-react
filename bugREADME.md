@@ -1,0 +1,1 @@
+### 1.在react-router-dom 4.2.1中在路控制中管理组件将会导致与mobx的解析器版本不一致需要添加＠withrouter注解，或者将react-router-dom升级到5.0版本即可
