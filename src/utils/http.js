@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Toast} from 'antd-mobile';
 import config from '@src/config/index';
 import appState from '@src/store/index';
+import constant from '@src/config/constant'
 /**
  * 请求
  */
@@ -22,7 +23,9 @@ class HttpRequest {
     }
 
     handleError(error){
-        const message = ((error.message === 'Network Error')?'服务器内部错误!':error.message) || '服务器内部错误'
+        Toast.hide();
+        const message = ((error.message === 'Network Error')?'服务器内部错误!':error.message) || '服务器内部错误';
+        Toast.fail(message,2)
         if(!error.code) return message
     }
 
@@ -55,18 +58,24 @@ class HttpRequest {
                 try {
                     // result = eval(`(${result})`)
                 }catch (e) {
-                    return {data:res.data, code :200, rel:true,message:res.message}
+                    return {data:res.data, code :constant.system.success, rel:true,message:res.message}
                 }
             }
 
             if(res.data instanceof Blob){
-                return {data:res.data, code :200, message:res.message, rel:true}
+                return {data:res.data, code :constant.system.success, message:res.message, rel:true}
             }
             const {code, data, rel=true,message} = result;
 
             return {data, code, rel,message}
         }, (error) => {
-
+            if (error.message.indexOf('timeout') !== -1) {
+                /**
+                 * 处理超时时间
+                 * **/
+                const msg = "连接超时";
+                return Promise.reject({message:msg})
+            }
             const errorMsg = error.message
             const response = (error.response || {}).data || {}
             const msg = response.msg || response.message ||errorMsg || '服务器内服错误'
@@ -83,20 +92,25 @@ class HttpRequest {
      * @param {object} options.headers 请求头
      * @param {string} options.headers.Authorization
      * @param {Array<function>} options.transformRequest
-     * @param {boolean} withToken
+     * @param {boolean} withToken 是否需要携带token
      * @param {boolean} showMsg
      * @return {Promise}
      */
     request(options, withToken = true, showMsg = false) {
         Toast.loading('正在加载...',0);
+        /**
+         * 设置超时时间
+         * **/
+        axios.defaults.timeout = constant.system.timeoutTime;
         const instance = axios.create();
         options = Object.assign(this.getInsideConfig(), options);
         this.interceptors(instance, options.url, withToken)
         return instance(options).then((res) => {
-            setTimeout(()=>{
-                Toast.hide();
-            },2000)
-            if(res && res.code+''==='200'){
+            Toast.hide();
+            if(res && res.code+''===(constant.system.success+'')){
+                /**
+                 * 请求正常进入
+                 * **/
                 if(showMsg && showMsg){
                     Toast.success(res.message,2)
                 }

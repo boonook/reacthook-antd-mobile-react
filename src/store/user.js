@@ -22,12 +22,14 @@ class UserState {
     }
     @action login(data,e){
         login(data).then(res=>{
-            if(res.code+''==='200'){
+            if(res && res.code+''==='200'){
                 let data = res.data||{};
                 setToken(data.token);
                 setIsLogin(true);
                 setUserInfo(data.userInfo);
                 e.history.replace('/');
+            }else{
+                return false;
             }
         })
     }
