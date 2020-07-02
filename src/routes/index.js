@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React,{Component,useState} from 'react';
 import { Route, Switch,Redirect } from 'react-router-dom';
 import DocumentTitle from 'react-document-title';
 import queryString from 'query-string';
@@ -7,8 +7,9 @@ import AllComponents from '@src/pages';
 import {observer,inject} from 'mobx-react';
 
 let CRouter = inject("appState")(observer((props=>{
+    const [isLogin,setIsLogin] = useState(props.appState.userState.isLogin||false)
+
     function requireLogin (component){
-        // const isLogin = this.props.appState.userState.isLogin||false;
         // if(isLogin+''==='false'){
         //     return <Redirect to={'/login'}/>
         // }
@@ -41,13 +42,17 @@ let CRouter = inject("appState")(observer((props=>{
                                             ? queryString.parse(queryParams[0])
                                             : {},
                                     };
-                                    // 重新包装组件
+                                    ///重新包装组件
                                     const wrappedComponent = (
                                         <DocumentTitle title={r.title}>
                                             <Component {...merge} />
                                         </DocumentTitle>
                                     );
-                                    return r.login?wrappedComponent:requireLogin(wrappedComponent,r.auth)
+                                    return wrappedComponent
+                                    /***
+                                     * isLogin判断用户是否有菜单权限或者是否登陆如果没有进入requireLogin()退出到404界面或者登陆界面
+                                     * ***/
+                                    ///return isLogin?wrappedComponent:requireLogin(wrappedComponent)
                                 }}
                             />
                         )
