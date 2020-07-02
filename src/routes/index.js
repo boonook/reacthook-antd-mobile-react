@@ -3,17 +3,17 @@ import { Route, Switch,Redirect } from 'react-router-dom';
 import DocumentTitle from 'react-document-title';
 import queryString from 'query-string';
 import routesConfig from './config';
-import AllComponents from '../pages';
+import AllComponents from '@src/pages';
 import {observer,inject} from 'mobx-react';
 
 @inject('appState') @observer
 class CRouter extends Component {
 
     requireLogin =(component)=>{
-        const isLogin = this.props.appState.userState.isLogin||false;
-        if(isLogin+''==='false'){
-            return <Redirect to={'/login'}/>
-        }
+        // const isLogin = this.props.appState.userState.isLogin||false;
+        // if(isLogin+''==='false'){
+        //     return <Redirect to={'/login'}/>
+        // }
         return component;
     }
 

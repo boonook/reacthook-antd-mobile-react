@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import {inject,observer} from "mobx-react";
-import Button from '../../../components/antdMobile/Button';
-import Radio from '../../../components/antdMobile/Radio';
-import Image from '../../../components/antdMobile/Image'
+import Button from '@src/components/antdMobile/Button';
+import Radio from '@src/components/antdMobile/Radio';
+import Image from '@src/components/antdMobile/Image'
 let LoginPage = inject("appState")(observer((props=>{
     const [value,setValue] = useState(0)
 
@@ -24,9 +24,9 @@ let LoginPage = inject("appState")(observer((props=>{
     ];
 
     function onChange(e){
-        
+
     }
-    
+
     function onRegisteredPage() {
         props.history.push('/registered')
     }

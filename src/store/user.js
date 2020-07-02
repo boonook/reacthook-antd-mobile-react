@@ -1,6 +1,6 @@
 import {observable,computed,action} from 'mobx';
 import { getIsLogin,setIsLogin,setToken,getToken,setUserInfo ,getUserInfo} from './cookies'
-import {login} from '../api/login'
+import {login} from '@src/api/login'
 class UserState {
     @observable count = 0;
     @observable name = 'Jokcy';
