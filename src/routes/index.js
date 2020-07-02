@@ -1,9 +1,9 @@
-import React,{Component} from 'react';
+import React from 'react';
 import { Route, Switch,Redirect } from 'react-router-dom';
 import DocumentTitle from 'react-document-title';
 import queryString from 'query-string';
-import routesConfig from './config';
-import AllComponents from '../pages';
+import routesConfig from '@src/routes/config';
+import AllComponents from '@src/pages';
 import {observer,inject} from 'mobx-react';
 @inject('appState') @observer
 class CRouter extends React.Component{
