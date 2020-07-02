@@ -11,11 +11,7 @@ let NoFound = inject("appState")(observer((props=>{
         if(time===0){
             clearTimeout(timerID);
             let isLogin = props.appState.userState.isLogin;
-            if(isLogin){
-                props.history.replace('/');
-            }else{
-                props.history.replace('/login');
-            }
+            props.history.replace('/');
         }
     })
 

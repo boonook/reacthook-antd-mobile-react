@@ -24,9 +24,9 @@ let LoginPage = inject("appState")(observer((props=>{
     ];
 
     function onChange(e){
-        
+
     }
-    
+
     function onRegisteredPage() {
         props.history.push('/registered')
     }

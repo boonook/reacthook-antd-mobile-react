@@ -1,5 +1,5 @@
 import {observable,computed,action} from 'mobx';
-import { getIsLogin,setIsLogin,setToken,getToken,setUserInfo ,getUserInfo} from '@src/store/cookies'
+import { getIsLogin,setIsLogin,setToken,getToken,setUserInfo ,getUserInfo} from './cookies'
 import {login} from '@src/api/login'
 class UserState {
     @observable count = 0;
