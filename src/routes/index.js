@@ -8,8 +8,8 @@ import {observer,inject} from 'mobx-react';
 
 @inject('appState') @observer
 class CRouter extends Component {
-
     requireLogin =(component)=>{
+        // this.props.history.listen(()=>{})
         // const isLogin = this.props.appState.userState.isLogin||false;
         // if(isLogin+''==='false'){
         //     return <Redirect to={'/login'}/>
