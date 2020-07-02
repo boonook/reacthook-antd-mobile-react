@@ -88,7 +88,12 @@
 ```bash
     所有的网络请求都在这里进行发起，在需要网络请求的位置进行调用，参数处理也最好着这个文件夹下对应的js中进行处理
 ```
-
+### 24.发布正式环境时将全局的debugger,以及console.log()删除掉
+```bash
+ 在webpack.config.js中加入
+ drop_debugger: true,//不打印debugger
+ drop_console: true,//不打印log
+```
 # 预期
 ### 1.实现自动化项目管理，减少手动修改代码在scripts目录下进行";
 
