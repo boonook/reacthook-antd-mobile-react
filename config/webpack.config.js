@@ -303,6 +303,7 @@ module.exports = function(webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         '@src':path.resolve('src'),
+        '@pages':path.resolve('src/pages'),
         ...(modules.webpackAliases || {}),
       },
       plugins: [

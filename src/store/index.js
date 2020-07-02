@@ -1,5 +1,5 @@
-import UserState from './user'
-import MenuState from './menu'
+import UserState from '@src/store/user'
+import MenuState from '@src/store/menu'
 
 class store {
     constructor() {
