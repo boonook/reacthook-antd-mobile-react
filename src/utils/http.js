@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Toast } from 'antd-mobile';
-import config from '../config/index';
-import appState from '../store/index';
+import config from '@src/config/index';
+import appState from '@src/store/index';
 /**
  * 请求
  */
