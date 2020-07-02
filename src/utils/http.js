@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Toast } from 'antd-mobile';
+import { Toast} from 'antd-mobile';
 import config from '@src/config/index';
 import appState from '@src/store/index';
 /**
@@ -88,10 +88,14 @@ class HttpRequest {
      * @return {Promise}
      */
     request(options, withToken = true, showMsg = false) {
+        Toast.loading('正在加载...',0);
         const instance = axios.create();
         options = Object.assign(this.getInsideConfig(), options);
         this.interceptors(instance, options.url, withToken)
         return instance(options).then((res) => {
+            setTimeout(()=>{
+                Toast.hide();
+            },2000)
             if(res && res.code+''==='200'){
                 if(showMsg && showMsg){
                     Toast.success(res.message,2)
