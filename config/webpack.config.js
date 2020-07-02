@@ -215,8 +215,8 @@ module.exports = function(webpackEnv) {
             compress: {
               ecma: 5,
               warnings: false,
-              drop_debugger:true,///不进入debugger,删除debugger
-              drop_console:true,///不打印log
+              drop_debugger: true,//不打印debugger
+              drop_console: true,//不打印log
               // Disabled because of an issue with Uglify breaking seemingly valid code:
               // https://github.com/facebook/create-react-app/issues/2376
               // Pending further investigation:

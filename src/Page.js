@@ -2,10 +2,11 @@ import React,{useState} from 'react';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import App from './App';
 import DocumentTitle from "react-document-title";
-import LoginPage from './pages/auth/login/index';
-import Registered from './pages/auth/registered/index';
-import NoFound from './pages/auth/noFound/index'
-function Page(props){
+import LoginPage from '@pages/auth/login/index';
+import Registered from '@pages/auth/registered/index';
+import NoFound from '@pages/auth/noFound/index';
+import {inject, observer} from "mobx-react";
+let Page = inject("appState")(observer((props=>{
     const [isLogin,setIsLogin] = useState(true)
     return (
         <Router>
@@ -23,6 +24,6 @@ function Page(props){
             </Switch>}
         </Router>
     );
-}
+})))
 
 export default Page
