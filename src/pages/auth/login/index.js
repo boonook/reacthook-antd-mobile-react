@@ -8,7 +8,7 @@ let LoginPage = inject("appState")(observer((props=>{
 
     useEffect(()=>{
         console.log(process.env.NODE_ENV)
-    })
+    },[])
 
     function onLogin(){
         let params = {

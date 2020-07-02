@@ -1,4 +1,4 @@
-import { isEmpty } from "./tools";
+import { isEmpty } from "@src/utils/tools";
 import {Toast} from "antd-mobile";
 //
 //{files:[File,File],b:{c:1,e:3}} => b.c=1  b.e=3

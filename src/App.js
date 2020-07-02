@@ -1,13 +1,10 @@
 import React from 'react';
-import Routes from './routes/index';
+import Routes from '@src/routes/index';
 import { Link } from 'react-router-dom';
-import routesConfig from './routes/config'
-import './App.less'
+import routesConfig from '@src/routes/config'
+import '@src/App.less'
 
 function App() {
-  function menu() {
-
-  }  
   return (
     <div className={'appBox'}>
        <div className={'appBoxTop'}>
