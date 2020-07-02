@@ -43,7 +43,6 @@ const constant = {
     ///token刷新间隔(ms)
     refreshTokenInterval:Infinity
   },
-
   ///接口错误响应码
   errorCode: {
     ///登陆超时
@@ -54,7 +53,6 @@ const constant = {
     otherLogin:4,
     default:0
   },
-
   fileType: {
     ///文档类型
     documentTypes: [

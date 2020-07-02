@@ -6,9 +6,12 @@ import appState from '@src/store/index';
  * 请求
  */
 const baseUrl = process.env.NODE_ENV+''==='development'?config.baseUrl.dev:config.baseUrl.pro;
+/**
+ * 定义一个HttpRequest类
+ * **/
 class HttpRequest {
-    constructor(baseUrl = baseUrl) {
-        this.baseUrl = baseUrl
+    constructor(_baseUrl =baseUrl) {
+        this.baseUrl = _baseUrl
         this.queue = {}
     }
 
@@ -106,7 +109,9 @@ class HttpRequest {
         )
     }
 }
-
+/**
+ * 导出目的时为了加载静态资源文件时做url的拼接
+ * **/
 export {
     baseUrl
 }

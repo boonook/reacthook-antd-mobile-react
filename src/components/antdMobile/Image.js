@@ -1,14 +1,9 @@
-import React,{useEffect} from 'react';
+import React from 'react';
 import LazyLoad from 'react-lazyload';
 function Radios(props) {
-
-    useEffect(()=>{
-
-    })
-
     return (
             <LazyLoad {...props}>
-                <img src={props.src} />
+                <img {...props} src={props.src} />
             </LazyLoad>
     );
 }

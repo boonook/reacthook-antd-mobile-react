@@ -42,7 +42,14 @@ let LoginPage = inject("appState")(observer((props=>{
                     })
                 }
             </div>
-            <Image height={720} src={'http://apod.nasa.gov/apod/image/1502/HDR_MVMQ20Feb2015ouellet1024.jpg'}/>
+            <Image title={'广告1'} alt={'广告1'} height={720} src={'http://apod.nasa.gov/apod/image/1502/HDR_MVMQ20Feb2015ouellet1024.jpg'}/>
+            <Image height={720} title={'广告2'} alt={'广告2'} src={'http://a3.att.hudong.com/14/75/01300000164186121366756803686.jpg'}/>
+            <Image height={720} src={'http://a0.att.hudong.com/56/12/01300000164151121576126282411.jpg'}/>
+            <Image height={720} src={'http://a0.att.hudong.com/64/76/20300001349415131407760417677.jpg'}/>
+            <Image height={720} src={'http://img2.imgtn.bdimg.com/it/u=3984473917,238095211&fm=214&gp=0.jpg'}/>
+            <Image height={720} src={'http://a2.att.hudong.com/86/10/01300000184180121920108394217.jpg'}/>
+            <Image height={720} src={'http://a3.att.hudong.com/13/41/01300000201800122190411861466.jpg'}/>
+            <Image height={720} src={'http://a4.att.hudong.com/47/66/01300000337727123266663353910.jpg'}/>
             <Button type={'primary'} icon="check-circle-o" onClick={onRegisteredPage} title={'注册'}/>
         </div>
     );
