@@ -85,6 +85,7 @@ class HttpRequest {
      * @return {Promise}
      */
     request(options, withToken = true, showMsg = false) {
+        axios.defaults.timeout = 30000;
         const instance = axios.create();
         options = Object.assign(this.getInsideConfig(), options);
         this.interceptors(instance, options.url, withToken)
