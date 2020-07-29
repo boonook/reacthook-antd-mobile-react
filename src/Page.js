@@ -7,7 +7,9 @@ import Registered from '@pages/auth/registered/index';
 import NoFound from '@pages/auth/noFound/index';
 import {inject, observer} from "mobx-react";
 let Page = inject("appState")(observer((props=>{
-    const [isLogin,setIsLogin] = useState(true)
+    // const [isLogin,setIsLogin] = useState(props.appState.userState.isLogin)
+    const [isLogin,setIsLogin] = useState(false)
+    console.log(props.appState.userState.isLogin);
     return (
         <Router>
             {isLogin? <Switch>

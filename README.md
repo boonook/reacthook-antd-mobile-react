@@ -94,7 +94,13 @@
  drop_debugger: true,//不打印debugger
  drop_console: true,//不打印log
 ```
-# 预期
+### 25.添加了全局的loading,每次网络请求时都会自动去加载loading不需要开发者再次添加
+```bash
+ Toast.loading('正在加载...',0);
+```
+### 网络请求添加超时时间，并对超时的错误进行处理
+
+# 预期 
 ### 1.实现自动化项目管理，减少手动修改代码在scripts目录下进行";
 
 

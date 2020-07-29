@@ -16,7 +16,8 @@ const constant = {
   },
   ///系统常量
   system: {
-    success: 200,
+    timeoutTime:30000,///超时时间设定
+    success: 200,///系统网络请求正常
     defaultPWD: '123456',
     ///启用
     enable:1,
@@ -43,18 +44,16 @@ const constant = {
     ///token刷新间隔(ms)
     refreshTokenInterval:Infinity
   },
-
   ///接口错误响应码
   errorCode: {
     ///登陆超时
-    timeout: 2,
+    timeout:30000,
     ///非法的令牌
     illegalToken:3,
     ///账号在其他地方登陆
     otherLogin:4,
     default:0
   },
-
   fileType: {
     ///文档类型
     documentTypes: [
