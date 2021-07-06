@@ -10,8 +10,8 @@ import ButtonPage from '@pages/ui/buttons';
 import Icons from '@pages/ui/icons';
 import EchartsLine from '@pages/echarts/line';
 import TestPage from '@pages/test';
-import MenuExample from '@pages/ui/menu'
-export default {
+import MenuExample from '@pages/ui/menu';
+const menus = {
     NoFound,
     LoginPage,
     Registered,
@@ -26,3 +26,18 @@ export default {
     MenuExample,
     EchartsLine
 }
+
+////将每个活动进行单元化
+const partnerFiles = require.context('./promotion',true, /\.js$/)
+let partnerConfig = {}
+partnerFiles.keys().forEach(key => {
+  let fileKey = key.replace(/\.\/|\router.js/g, '');
+  console.log('------------------',partnerFiles(key).default);
+  partnerConfig[fileKey] = partnerFiles(key).default
+})
+// debugger
+
+console.log(partnerConfig);
+
+
+export default menus;

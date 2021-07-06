@@ -1,4 +1,4 @@
-import http from '../utils/http';
+import http from '@src/utils/http';
 /**
  * 用户登录
  * **/

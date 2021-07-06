@@ -1,5 +1,5 @@
-import http from '../utils/http';
-import {makeQueryString,makeFormData} from '../utils/libs'
+import http from '@src/utils/http';
+import {makeQueryString,makeFormData} from '@src/utils/libs'
 
 /**
  * 发起请求

@@ -1,4 +1,8 @@
 const constant = {
+  baseUrl:{
+    dev:"",
+    pro:''
+  },
   /// 性别常量
   sex: {
     man: 0,
